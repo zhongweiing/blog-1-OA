@@ -3,6 +3,10 @@
 ## 介绍
 这是一套智能OA办公系统，里面包含了人事管理系统，这套功能的主干都已经完成，大多数功能用到的都是ajax技术，极个别界面采用传统MVC方法。代码规范化，基本上每个类和每个方法都写有注释。
 
+目前这套系统有一套毕业设计论文，包括开题报告、文献综述、一稿、二稿及终稿，维普查重率6%左右，大学生毕业论文不会录入知网和维普等查重系统，可以用于毕业设计。
+
+提供后续服务，包括代码讲解，疑难解答和答辩的注意事项，有需要可以联系`863772270`
+
 ## 1.前言
 
 本套系统主要实现的是OA办公系统中一些常用发功能，还有一些功能因为时间的原因没有开发，但主线功能基本完善。前端页面模板用的是GitHub上面一位老兄OA系统办公模板，但功能上面的话我都进行了重新编写，用自己的代码方式改了过来，并添加了很多功能点。
@@ -569,18 +573,3 @@ public List<Employee> getEmpData(String sql) throws SQLException {
 以上的系统主线功能基本完成，从GitHub大佬用的模板改进了全部功能，现在找不到这个GitHub的地址是什么了，如果有侵权请联系。用来学习的话，能够把全部代码总一遍，基本上可以学会所有的javaee知识，如果JavaScript底子好的话，还能够深入的研究一下ajax代码。ajax代码比传统MVC好用多了。
 
 好了，这次的项目分享到此也差不多了。觉得小弟写的不错的话，可以点赞加关注一下，谢谢！有需要源码的小伙伴也可以搜索**企鹅号863772270**，编码不易，请作者喝瓶水即可。
-
-DataDAO.java实现
-
-```java
-/**
-* -由于代码非常相似，所以只需要根据SQL语句不同查询不同的字段就行，这里查询的是员工的数据
-* @return
-* @throws SQLException 
-*/
-public List<Employee> getEmpData(String sql) throws SQLException {
-    List<Object> params = new ArrayList<Object>();
-    return DBUtil.list(sql, Employee.class, params.toArray());
-}
-```
-
